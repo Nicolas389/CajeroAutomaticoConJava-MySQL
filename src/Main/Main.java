@@ -15,7 +15,9 @@ public class Main {
         Cajero c =  new Cajero();
         Metodos met = new Metodos();
         
-       String usuario = a.tomarUsuario("2-15148978-3");
-        System.out.println(usuario);
+      for (int i=0; i<10;i++){
+        String aa = a.CrearCbu();
+        System.out.println(aa);
+      }
  }
 }

@@ -145,6 +145,8 @@ public class JFRecargar extends JFPadre {
     private void btnDepositarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDepositarActionPerformed
        admin.sumarMontoCajero(Integer.parseInt(this.txtDepositar.getText()));
        cl.registrarMovimiento("Recarga",Integer.parseInt(this.txtDepositar.getText()),"Admin");
+       met.LimpiarCajas(txtDepositar, txtDepositar);
+       this.btnDepositar.setEnabled(false);
             
     }//GEN-LAST:event_btnDepositarActionPerformed
 

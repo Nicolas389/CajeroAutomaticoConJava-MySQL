@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class Cliente extends Persona {
@@ -402,6 +403,39 @@ public class Cliente extends Persona {
         }
         conectar.Desconectar();
         return modelo;
+    }
+
+    public void CrearUsuario(String User, int contraseña) {
+
+        String cbu = CrearCbu();
+        
+        try {
+            con = conectar.getConexion();
+            ps = con.prepareStatement("insert into clientes(usuario,contraseña,saldo,cbu) Values(?,?,?,?)");
+            ps.setString(1, User);
+            ps.setInt(2, contraseña);
+            ps.setInt(3, 0);
+            ps.setString(4, cbu);
+            ps.executeUpdate();
+            
+            JOptionPane.showMessageDialog(null,"Sus datos de cuenta son:"+ "\nUsuario: "+ User + "\nContraseña: "
+                    + contraseña + "\nCBU: "+ cbu);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        conectar.Desconectar();
+    }
+
+    public String CrearCbu() {
+        
+        String cbu = " ";
+        int n1 = (int) (Math.random() * 16+12);
+        int n2 = (int) (Math.random() * 999999+100000);
+        int n3 = (int) (Math.random() * 9);
+        
+        cbu = "2-" + n1 + n2 + "-" + n3;
+
+        return cbu;
     }
 
 }

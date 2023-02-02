@@ -7,7 +7,7 @@ idUsuario int (5) primary key auto_increment,
 usuario varchar(20),
 contraseña int(6),
 saldo int,
-cbu varchar(12)
+cbu varchar(12) 
 );
 
 
@@ -28,8 +28,6 @@ usuario varchar(5),
 montoCajero int(10)
 );
 
-select idUsuario from clientes where usuario="nicolas2764" and contraseña=662520;
-UPDATE clientes SET saldo = 600 WHERE idUsuario = 6;
 
 insert into clientes (usuario,contraseña,saldo,cbu) VALUES ("nicolas2764",662520,5000,"2-13415213-5");
 insert into clientes (usuario,contraseña,saldo,cbu) VALUES ("juan3421",432512,15400,"2-14213532-6");
@@ -38,8 +36,9 @@ insert into clientes (usuario,contraseña,saldo,cbu) VALUES ("perz5412",894213,1
 insert into cajero (usuario,montoCajero) VALUES ("admin",1000000);
 
 
-select * from clientes;
+select usuario,contraseña from clientes;
 select * from movimientos;
+
 
 
 

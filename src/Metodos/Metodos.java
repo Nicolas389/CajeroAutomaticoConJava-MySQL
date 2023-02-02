@@ -30,6 +30,13 @@ public class Metodos {
         uno.setText(null);
         dos.setText(null);
     }
+    
+    public void LimpiarCajas(JTextField uno, JTextField dos, JTextField tres) {
+
+        uno.setText(null);
+        dos.setText(null);
+        tres.setText(null);
+    }
 
     /**
      * Metodo para activar el boton para ingresar informacion. Depende de que se
@@ -38,6 +45,14 @@ public class Metodos {
     public void ActivarIngresar(JTextField uno, JTextField dos, JButton nombreBoton) {
 
         if (!uno.getText().isEmpty() && !dos.getText().isEmpty()) {
+            nombreBoton.setEnabled(true);
+        }
+
+    }
+    
+    public void ActivarIngresar(JTextField uno, JTextField dos, JTextField tres, JButton nombreBoton) {
+
+        if (!uno.getText().isEmpty() && !dos.getText().isEmpty() & !tres.getText().isEmpty()) {
             nombreBoton.setEnabled(true);
         }
 

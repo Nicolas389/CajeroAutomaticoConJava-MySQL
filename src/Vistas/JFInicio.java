@@ -1,12 +1,10 @@
 package Vistas;
 
 import Vistas.Cliente.JFCliente;
-import Vistas.NoCliente.JFNoCliente;
 import Clases.Cliente;
 import Metodos.Metodos;
 import Vistas.Admin.JFAdmin;
 import java.awt.Color;
-import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
 public class JFInicio extends JFPadre {
@@ -17,9 +15,10 @@ public class JFInicio extends JFPadre {
         initComponents();
         this.labelTexto.setText("¡BIENVENIDO!");// cambiar el texto bajo el logo
         this.btnBorrar.setBackground(Color.red); // cambiar color del color
-        this.btnIngresar.setBackground(Color.red);
-        this.btnSinClave.setBackground(Color.red);
+        this.btnIngresar.setBackground(Color.red);        
         this.btnListaUsuarios.setBackground(Color.red);
+        btnCrearCuenta.setBackground(Color.red);
+        this.btnInstrucciones.setBackground(Color.red);
         this.btnIngresar.setEnabled(false); // desactivar el boton ingresar
         btnDos.setEnabled(false);
         btnTres.setEnabled(false);
@@ -41,12 +40,13 @@ public class JFInicio extends JFPadre {
         btnIngresar = new javax.swing.JButton();
         btnBorrar = new javax.swing.JButton();
         txtContra = new javax.swing.JPasswordField();
-        btnSinClave = new javax.swing.JButton();
         btnListaUsuarios = new javax.swing.JButton();
         btnUno = new javax.swing.JButton();
         btnDos = new javax.swing.JButton();
         btnTres = new javax.swing.JButton();
         btnCuatro = new javax.swing.JButton();
+        btnCrearCuenta = new javax.swing.JButton();
+        btnInstrucciones = new javax.swing.JButton();
 
         jTextField2.setText("jTextField1");
 
@@ -92,15 +92,6 @@ public class JFInicio extends JFPadre {
             }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtContraKeyTyped(evt);
-            }
-        });
-
-        btnSinClave.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnSinClave.setForeground(new java.awt.Color(255, 255, 255));
-        btnSinClave.setText("INGRESAR SIN CLAVE");
-        btnSinClave.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSinClaveActionPerformed(evt);
             }
         });
 
@@ -163,6 +154,24 @@ public class JFInicio extends JFPadre {
             }
         });
 
+        btnCrearCuenta.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnCrearCuenta.setForeground(new java.awt.Color(255, 255, 255));
+        btnCrearCuenta.setText("CREAR CUENTA");
+        btnCrearCuenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCrearCuentaActionPerformed(evt);
+            }
+        });
+
+        btnInstrucciones.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        btnInstrucciones.setForeground(new java.awt.Color(255, 255, 255));
+        btnInstrucciones.setText("INSTRUCCIONES");
+        btnInstrucciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInstruccionesActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -171,9 +180,13 @@ public class JFInicio extends JFPadre {
                 .addComponent(btnUno, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnDos, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(btnCuatro, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnTres, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(81, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addComponent(jLabel2)
@@ -183,19 +196,19 @@ public class JFInicio extends JFPadre {
                             .addGap(32, 32, 32)
                             .addComponent(jLabel1)
                             .addGap(18, 18, 18)
-                            .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(btnListaUsuarios, javax.swing.GroupLayout.Alignment.TRAILING))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(btnSinClave, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(50, 50, 50))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(btnCuatro, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnTres, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addComponent(btnListaUsuarios)
+                            .addGap(55, 55, 55)
+                            .addComponent(btnInstrucciones))
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addComponent(btnCrearCuenta)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(btnBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(btnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(94, 94, 94))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,16 +229,20 @@ public class JFInicio extends JFPadre {
                         .addComponent(jLabel2))
                     .addComponent(txtContra, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnListaUsuarios)
-                .addGap(44, 44, 44)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnSinClave, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCuatro, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnTres, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCrearCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnCuatro, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnTres, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnListaUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnInstrucciones, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(28, 28, 28))))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -266,13 +283,6 @@ public class JFInicio extends JFPadre {
         this.btnIngresar.setEnabled(false); // desactiva el boton ingresar
     }//GEN-LAST:event_btnBorrarActionPerformed
 
-    private void btnSinClaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSinClaveActionPerformed
-        JFNoCliente nc = new JFNoCliente();
-        
-        this.setVisible(false);
-        nc.setVisible(true);
-    }//GEN-LAST:event_btnSinClaveActionPerformed
-
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
         Cliente cli = new Cliente();        
         JFCliente frC = new JFCliente();
@@ -310,7 +320,7 @@ public class JFInicio extends JFPadre {
     private void btnCuatroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCuatroActionPerformed
         JFAdmin JFadmin = new JFAdmin();
         
-        String contra = JOptionPane.showInputDialog("Ingrese la contraseña:");
+        String contra = JOptionPane.showInputDialog(null, "Ingrese la contraseña:", "MODO ADMIN", JOptionPane.INFORMATION_MESSAGE);
         
         if(contra.equals("admin")){
         this.dispose();
@@ -323,6 +333,22 @@ public class JFInicio extends JFPadre {
     private void btnDosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDosActionPerformed
         btnTres.setEnabled(true);
     }//GEN-LAST:event_btnDosActionPerformed
+
+    private void btnCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearCuentaActionPerformed
+        Cliente cli = new Cliente();
+        JFCrearUsuario JFCrear = new JFCrearUsuario();
+        
+        this.dispose();
+        JFCrear.setVisible(true);
+        
+        
+    }//GEN-LAST:event_btnCrearCuentaActionPerformed
+
+    private void btnInstruccionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInstruccionesActionPerformed
+       JFInstrucciones ins = new JFInstrucciones();
+       
+       ins.setVisible(true);
+    }//GEN-LAST:event_btnInstruccionesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -363,11 +389,12 @@ public class JFInicio extends JFPadre {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBorrar;
+    private javax.swing.JButton btnCrearCuenta;
     private javax.swing.JButton btnCuatro;
     private javax.swing.JButton btnDos;
     private javax.swing.JButton btnIngresar;
+    private javax.swing.JButton btnInstrucciones;
     private javax.swing.JButton btnListaUsuarios;
-    private javax.swing.JButton btnSinClave;
     private javax.swing.JButton btnTres;
     private javax.swing.JButton btnUno;
     private javax.swing.JButton jButton2;
